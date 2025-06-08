@@ -4,18 +4,19 @@
 #include <iostream>
 
 class BankAccount {
-    private:
+    public:
         std::string _accountHolder;
         int _accountNumber;
         double _balance;
     public:
         BankAccount();
-        //redecleartion BankAccount(std::string accountName, int accountNumber, double initialBalance);
-        BankAccount(const BankAccount& src) 
-            : _accountHolder { src._accountHolder }, _accountNumber { src._accountNumber }, _balance { src._balance }{}
-        BankAccount(std::string accountName, int accountNumber, double initialBalance)
-            : _accountHolder { accountName }, _accountNumber { accountNumber }, _balance { initialBalance } {}
+        BankAccount(const BankAccount& src);
+   		BankAccount(std::string name, int accountNumber, double initialBalance);
         ~BankAccount();
+		BankAccount& operator=(const BankAccount& rhs);
+		void deposit(double amount);
+		bool withdraw(double ammount);
+		void display() const;
 };
 
 #endif /* BANKACCOUNT_HPP */
