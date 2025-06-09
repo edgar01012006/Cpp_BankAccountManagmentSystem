@@ -41,6 +41,7 @@ void BankAccount::deposit(double amount) {
         return;
     }
     _balance += amount;
+    std::cout << "Successfully deposited " << amount << " to " << _accountHolder << std::endl;
 }
 
 bool BankAccount::withdraw(double amount) {
@@ -54,11 +55,23 @@ bool BankAccount::withdraw(double amount) {
     }
     else {
         _balance -= amount;
-        std::cout << "Successfully Withdrawed " << amount << std::endl;
+        std::cout << "Successfully Withdrawed " << amount << " from " << _accountHolder << std::endl;
         return true;
     }
 }
 
 void BankAccount::display() const {
     std::cout << "AccountHolder's name is " << _accountHolder << "\t AccountNumber is " << _accountNumber << "\t Account balance = " << _balance;
+}
+
+std::string BankAccount::getAccountHolder() const {
+    return _accountHolder;
+}
+
+int BankAccount::getAccountNumber() const {
+    return _accountNumber;
+}
+
+double BankAccount::getAccountBalance() const {
+    return _balance;
 }
