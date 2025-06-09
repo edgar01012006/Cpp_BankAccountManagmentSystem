@@ -4,7 +4,7 @@
 #include <iostream>
 
 class BankAccount {
-    public:
+    private:
         std::string _accountHolder;
         int _accountNumber;
         double _balance;
@@ -17,6 +17,9 @@ class BankAccount {
 		void deposit(double amount);
 		bool withdraw(double ammount);
 		void display() const;
+        std::string getAccountHolder() const;
+        int getAccountNumber() const;
+        double getAccountBalance() const;
 };
 
 #endif /* BANKACCOUNT_HPP */
