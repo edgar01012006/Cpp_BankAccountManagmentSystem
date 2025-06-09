@@ -2,17 +2,13 @@
 #define BANKSYSTEM_HPP
 #include <iostream>
 #include <string>
+#include <vector>
 #include "BankAccount.hpp"
 
 class BankSystem {
 	private:
-		size_t _accountCount;
-		size_t _accountCapacity;
-		BankAccount* _accounts;		
+        std::vector<BankAccount> _accounts;
 	public:
-		bool reserveAccountSpace();
-		BankSystem();
-		~BankSystem();
 		void addAccount(const std::string& name, int accountNumber, double initialBalance);
 		BankAccount* findAccount(int accountNumber);
 		void transferFunds(int senderAcc, int receiverAcc, double amount);
