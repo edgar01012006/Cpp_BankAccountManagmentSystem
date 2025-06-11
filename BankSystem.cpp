@@ -1,7 +1,7 @@
 #include "BankSystem.hpp"
 
 void BankSystem::addAccount(const std::string& name, int accountNumber, double initialBalance) {
-	_accounts.push_back(BankAccount(name, accountNumber, initialBalance));
+	_accounts.emplace_back(BankAccount(name, accountNumber, initialBalance));
 	std::cout << "Successfully added a new account\n";
 }
 
