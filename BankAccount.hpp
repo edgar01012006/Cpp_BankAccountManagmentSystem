@@ -11,7 +11,7 @@ class BankAccount {
     public:
         BankAccount();
         BankAccount(const BankAccount& src);
-   		BankAccount(std::string name, int accountNumber, double initialBalance);
+   		BankAccount(const std::string& name, int accountNumber, double initialBalance);
         ~BankAccount();
 		BankAccount& operator=(const BankAccount& rhs);
 		void deposit(double amount);
