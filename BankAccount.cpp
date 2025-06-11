@@ -3,10 +3,8 @@
 #include "BankAccount.hpp"
 
 
-BankAccount::BankAccount() {
-    _accountHolder = "Unknown";
-    _accountNumber = 0;
-    _balance = 0.0;
+BankAccount::BankAccount() : _accountHolder { "Unknown" }, _accountNumber { 0 }, _balance { 0.0 } {
+    //empty
 }
 
 BankAccount::BankAccount(const BankAccount& src)
@@ -14,15 +12,13 @@ BankAccount::BankAccount(const BankAccount& src)
 	//empty
 }
 
-BankAccount::BankAccount(std::string name, int accountNumber, double initialBalance) 
+BankAccount::BankAccount(const std::string& name, int accountNumber, double initialBalance) 
 	: _accountHolder { name }, _accountNumber { accountNumber }, _balance { initialBalance } {
 	//empty
 }
 
 BankAccount::~BankAccount() {
-    _accountHolder = "Unknown";
-    _accountNumber = 0;
-    _balance = 0.0;
+    //empty
 }
 
 BankAccount& BankAccount::operator=(const BankAccount& rhs) {
